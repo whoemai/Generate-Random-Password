@@ -13,15 +13,17 @@ def generate_password():
 
 root = tk.Tk()
 root.title("Password Generator")
+root.geometry("500x400+100+100")
 
 label = Label(root, text="")
-label.pack()
+label.pack(side="top", fill="both", expand=True, anchor="center")
 
 entry = Entry(root, width=50)
-entry.pack()
+entry.pack(side="top", fill="both", expand=True, anchor="center")
 entry.insert(0, 20)
 
 button = Button(root, text="Generate", command=generate_password)
-button.pack()
+button.pack(side="bottom", fill="both", expand=True, anchor="center", pady=25, padx=25)
 
 root.mainloop()
+
