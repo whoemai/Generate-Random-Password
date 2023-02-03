@@ -4,8 +4,9 @@ import string
 import pyperclip
 
 def generate_password():
-    password = ''.join(random.sample(string.ascii_letters + string.digits, 20))
-    label["text"] = password
+    numberPassword = int(entry.get())
+    password = ''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k=numberPassword))
+    label.config(text=password)
 
 def copy_password():
     pyperclip.copy(label["text"])
@@ -28,7 +29,3 @@ copy_button = tk.Button(root, text="Copy", command=copy_password)
 copy_button.pack(side="right", padx=10)
 
 root.mainloop()
-
-
-
-#branch
